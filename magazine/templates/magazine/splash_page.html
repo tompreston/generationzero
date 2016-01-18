@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Generation Zero</title>
+  </head>
+  <body>
+    <h1>Generation Zero</h1>
+    <h2>Issues</h2>
+    <ul>
+        {% for issue in issue_list %}
+        <li><a href="{% url 'issue' issue_slug=issue.slug %}">{{ issue.title }}</a></li>
+        {% empty %}
+        <li>No issues</li>
+        {% endfor %}
+    </ul>
+    <h2>Categories</h2>
+    <ul>
+        {% for category in category_list %}
+        <li><a href="{% url 'category' category_slug=category.slug %}">{{ category.title }}</a></li>
+        {% empty %}
+        <li>No categories</li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>
