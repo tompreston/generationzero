@@ -7,6 +7,11 @@ If you're new to Django, here's the layout:
     generationzero/       <- project directory
         generationzero/   <- settings and stuff
         magazine/         <- the `magazine` app
+        static/
+            css/          <- stylesheets
+        templates/        <- HTML templates for the website
+            base.html     <- other templates inherit from this
+            *.html        <- templates for views
         manage.py         <- project control
         requirements.txt  <- packages reqired for this project
 
