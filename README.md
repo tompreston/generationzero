@@ -59,11 +59,15 @@ a 3.4 virtual environment):
 
     python manage.py migrate
 
+Load some test data (if available):
+
+    python manage loaddata test_data.json
+
 Now create a superuser:
 
     python manage.py createsuperuser
 
-Now run a test server:
+Finally, run the test server:
 
     python manage.py runserver
 
