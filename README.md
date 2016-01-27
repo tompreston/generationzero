@@ -64,7 +64,7 @@ a 3.4 virtual environment):
 
 Load some test data (if available):
 
-    python manage loaddata test_data.json
+    python manage.py loaddata test_data.json
 
 Now create a superuser:
 
