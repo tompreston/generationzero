@@ -36,6 +36,9 @@ Getting Started
 ---------------
 This is how I work, your milage may vary.
 
+First, you'll need `pip` and `virtualenv-3.4` installed. Go get them and
+then come back.
+
 Clone the repo:
 
     git clone https://github.com/tompreston/generationzero.git
