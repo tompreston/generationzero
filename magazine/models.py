@@ -33,7 +33,7 @@ class Entry(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     content = MarkdownField()
-    issue = models.ForeignKey(Issue)
+    issue = models.ForeignKey(Issue, blank=True, null=True)
     category = models.ForeignKey(Category)
     created_by = models.ForeignKey(User)
     created_at = models.DateTimeField(default=timezone.now)

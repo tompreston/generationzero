@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title_suffix %}
+/ {{ issue.title }}
+{% endblock title_suffix %}
+
+{% block content %}
+
+{# breadcrumbs #}
+<a href="{% url 'splash_page' %}">Generation Zero</a> /
+
+<h2>{{ issue.title }}</h2>
+<ul>
+  {% for entry in entry_list %}
+  <li><a href="{% url 'entry_in_issue' issue_slug=issue.slug entry_slug=entry.slug %}">{{ entry.title }}</a></li>
+  {% empty %}
+  <li>No entries</li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

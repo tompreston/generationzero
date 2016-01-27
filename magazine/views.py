@@ -5,18 +5,18 @@ from django.shortcuts import get_object_or_404
 
 class SplashPageView(TemplateView):
 
-    template_name = "magazine/splash_page.html"
+    template_name = "splash_page.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['issue_list'] = Issue.objects.all()
-        context['category_list'] = Category.objects.all()
+        context['issue_list'] = Issue.objects.filter(is_visible=True)
+        context['category_list'] = Category.objects.filter(is_visible=True)
         return context
 
 
 class IssueView(ListView):
 
-    template_name = 'magazine/issue.html'
+    template_name = 'issue.html'
     context_object_name = 'entry_list'
 
     def get_queryset(self):
@@ -32,7 +32,7 @@ class IssueView(ListView):
 
 class CategoryView(ListView):
 
-    template_name = 'magazine/category.html'
+    template_name = 'category.html'
     context_object_name = 'entry_list'
 
     def get_queryset(self):
@@ -49,9 +49,18 @@ class CategoryView(ListView):
 
 class EntryDetailView(DetailView):
 
-    # This is the default template
-    # template_name = 'magazine/entry_detail.html'
+    template_name = 'entry_detail.html'
     context_object_name = 'entry'
 
     def get_object(self):
         return get_object_or_404(Entry, slug=self.kwargs['entry_slug'])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if 'issue_slug' in self.kwargs:
+            context['issue'] = get_object_or_404(
+                Issue, slug=self.kwargs['issue_slug'])
+        elif 'category_slug' in self.kwargs:
+            context['category'] = get_object_or_404(
+                Category, slug=self.kwargs['category_slug'])
+        return context

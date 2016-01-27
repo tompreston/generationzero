@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load django_markdown %}
+
+{% block title_suffix %}
+{% comment %}
+Make the title look like :
+
+    - '/ Issue #1 / Sick post'
+    - '/ Literature / Sick post'
+    - '/ Sick post'
+
+{% endcomment %}
+
+{% if issue %}
+/ {{ issue.title }}
+{% elif category %}
+/ {{ category.title }}
+{% endif %}
+/ {{ entry.title }}
+{% endblock title_suffix %}
+
+{% block content %}
+
+{# show some breadcrumbs #}
+<a href="{% url 'splash_page' %}">Generation Zero</a>
+{% if issue %}
+ / <a href="{% url 'issue' issue.slug %}">{{ issue.title }}</a>
+{% elif category %}
+ / <a href="{% url 'category' category.slug %}">{{ category.title }}</a>
+{% endif %}
+/
+
+<h1>{{ entry.title }}</h1>
+{{ entry.content|markdown }}
+
+{% endblock content %}
