@@ -5,3 +5,38 @@
 body {
     background-color: rgb(245, 245, 245);
 }
+
+/* MISC POSITIONINGS */
+.clear{
+	clear: both;
+}
+
+/* MAIN HEADER w/ NAVIGATION ETC. */
+#header_container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 0;
+	/* center all inline content */
+	text-align: center;
+}
+#header {
+	width: 90%;
+	margin: 0 auto;
+}
+#header div{
+	display: inline-block;
+	vertical-align: middle;
+}
+#branding {
+	float: left;
+}
+#navigation {
+}
+#navigation li{
+	display: inline-block;
+}
+#menu {
+	float: right;
+}

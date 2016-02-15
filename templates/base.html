@@ -15,7 +15,26 @@
   </head>
   <body>
     {% block body %}
-    {# we might want to put a nav bar or something here in the future #}
+    <div id="header_container">
+      <div id="header">
+        <div id="branding">
+          ZERO
+        </div>
+        <div id="navigation">
+          <ul>
+            {% for category in category_list %}
+            <li><a href="{% url 'category' category_slug=category.slug %}">{{ category.title }}</a></li>
+            {% empty %}
+            <li>No categories</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div id="menu">
+          MENU
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
 
     {% block content %}
     {# here is where the actual content goes #}
