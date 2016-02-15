@@ -10,14 +10,16 @@ body {
 .clear{
 	clear: both;
 }
+.hide {
+	display: none;
+}
 
 /* MAIN HEADER w/ NAVIGATION ETC. */
 #header_container {
-	position: fixed;
+	position: relative;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 0;
 	/* center all inline content */
 	text-align: center;
 }
@@ -26,13 +28,27 @@ body {
 	margin: 0 auto;
 }
 #header div{
-	display: inline-block;
 	vertical-align: middle;
+}
+#masthead {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: relative;
+  z-index: 9000;
+}
+#masthead h1{
+	font-size: 60vh;
+	margin: 0;
 }
 #branding {
 	float: left;
 }
 #navigation {
+	display: inline-block;
 }
 #navigation li{
 	display: inline-block;

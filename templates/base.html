@@ -7,8 +7,10 @@
     <meta charset="utf-8">
 
     {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
     {% endblock css %}
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.0.min.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'js/masthead.js' %}" charset="utf-8"></script>
 
     <title>Generation Zero{% block title_suffix %}{% endblock title_suffix %}</title>
     {% endblock head %}
@@ -16,8 +18,12 @@
   <body>
     {% block body %}
     <div id="header_container">
-      <div id="header">
-        <div id="branding">
+     <div id="masthead">
+        <h1>ZERO</h1>
+      </div>
+      <div id="header">       
+        <div class="clear"></div>
+        <div id="branding" class="hide">
           ZERO
         </div>
         <div id="navigation">
@@ -29,16 +35,19 @@
             {% endfor %}
           </ul>
         </div>
-        <div id="menu">
+        <div id="menu" class="hide">
           MENU
         </div>
         <div class="clear"></div>
       </div>
     </div>
 
-    {% block content %}
-    {# here is where the actual content goes #}
-    {% endblock content %}
+    <div id="main_container">
+      {% block content %}
+      {# here is where the actual content goes #}
+      {% endblock content %}
+      <div class="clear"></div>
+    </div>
 
     {% endblock body %}
   </body>
