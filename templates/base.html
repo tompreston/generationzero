@@ -19,12 +19,11 @@
     {% block body %}
     <div id="header_container">
      <div id="masthead">
-        <h1>ZERO</h1>
+        <img src="{% static 'img/branding.png' %}">
       </div>
       <div id="header">       
-        <div class="clear"></div>
         <div id="branding" class="hide">
-          ZERO
+          <a href="{% url 'splash_page' %}"><img src="{% static 'img/branding.png' %}"></a>
         </div>
         <div id="navigation">
           <ul>
@@ -42,7 +41,7 @@
       </div>
     </div>
 
-    <div id="main_container">
+    <div id="main_content">
       {% block content %}
       {# here is where the actual content goes #}
       {% endblock content %}

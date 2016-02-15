@@ -1,9 +1,25 @@
 * {
-    font-family: monospace;
+    font-family: impact;
 }
 
 body {
-    background-color: rgb(245, 245, 245);
+}
+
+/* TYPOGRAPHY */
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:visited { 
+  color: #000;
+}
+a:hover { 
+  color: #999;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
 }
 
 /* MISC POSITIONINGS */
@@ -22,8 +38,10 @@ body {
 	right: 0;
 	/* center all inline content */
 	text-align: center;
+	text-transform: uppercase;
 }
 #header {
+	padding: 2% 0;
 	width: 90%;
 	margin: 0 auto;
 }
@@ -31,6 +49,7 @@ body {
 	vertical-align: middle;
 }
 #masthead {
+	padding: 2% 0;
   text-align: center;
   width: 90%;
   margin: 0 auto;
@@ -40,19 +59,31 @@ body {
   position: relative;
   z-index: 9000;
 }
-#masthead h1{
-	font-size: 60vh;
-	margin: 0;
-}
 #branding {
 	float: left;
+	width: 8%;
+}
+#branding img{
+	width: 100%;
 }
 #navigation {
+	margin: 10px 0 0 0;
 	display: inline-block;
 }
 #navigation li{
 	display: inline-block;
+	margin: 0 20px;
+}
+#navigation a{
+	font-size: 30px;
 }
 #menu {
 	float: right;
+	width: 8%;
+}
+
+/* MAIN CONTENT */
+#main_content {
+	width: 80%;
+	margin: 0 auto;
 }
