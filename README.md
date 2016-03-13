@@ -41,7 +41,7 @@ Getting Started
 ---------------
 This is how I work, your milage may vary.
 
-First, you'll need `pip` and `virtualenv-3.4` installed. Go get them and
+First, you'll need `pip` and `virtualenv` installed. Go get them and
 then come back.
 
 Clone the repo:
@@ -51,7 +51,7 @@ Clone the repo:
 
 Setup a virtual environment directory called `venv` and then activate it:
 
-    virtualenv-3.4 venv
+    virtualenv venv
     source venv/bin/activate
 
 Your command line should change to indicate that you're now using the
@@ -62,8 +62,7 @@ virtual Python environment. Now install all of the required packages:
 This will install everything you need into the `venv` virtual environment
 directory (so it doesn't litter your system files).
 
-Create the database (notice how `python` now calls Python 3 since we're in
-a 3.4 virtual environment):
+Create the database:
 
     python manage.py migrate
 

@@ -8,7 +8,7 @@ class SplashPageView(TemplateView):
     template_name = "splash_page.html"
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(SplashPageView, self).get_context_data(**kwargs)
         context['issue_list'] = Issue.objects.filter(is_visible=True)
         context['category_list'] = Category.objects.filter(is_visible=True)
         return context
@@ -23,7 +23,7 @@ class IssueView(ListView):
         return Entry.objects.filter(issue__slug=self.kwargs['issue_slug'])
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(IssueView, self).get_context_data(**kwargs)
         context['issue'] = get_object_or_404(
             Issue,
             slug=self.kwargs['issue_slug'])
@@ -40,7 +40,7 @@ class CategoryView(ListView):
             category__slug=self.kwargs['category_slug'])
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(CategoryView, self).get_context_data(**kwargs)
         context['category'] = get_object_or_404(
             Category,
             slug=self.kwargs['category_slug'])
@@ -56,7 +56,7 @@ class EntryDetailView(DetailView):
         return get_object_or_404(Entry, slug=self.kwargs['entry_slug'])
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(EntryDetailView, self).get_context_data(**kwargs)
         if 'issue_slug' in self.kwargs:
             context['issue'] = get_object_or_404(
                 Issue, slug=self.kwargs['issue_slug'])
