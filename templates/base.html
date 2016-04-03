@@ -7,10 +7,11 @@
     <meta charset="utf-8">
 
     {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     {% endblock css %}
     <script type="text/javascript" src="{% static 'js/jquery-1.12.0.min.js' %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static 'js/masthead.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}" charset="utf-8"></script>
 
     <title>Generation Zero{% block title_suffix %}{% endblock title_suffix %}</title>
     {% endblock head %}
@@ -21,7 +22,7 @@
      <div id="masthead">
         <img src="{% static 'img/branding.png' %}">
       </div>
-      <div id="header">       
+      <div id="header">
         <div id="branding" class="hide">
           <a href="{% url 'splash_page' %}"><img src="{% static 'img/branding.png' %}"></a>
         </div>

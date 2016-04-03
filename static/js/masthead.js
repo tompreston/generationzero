@@ -7,8 +7,8 @@ $(document).ready(function(){
 					$("#branding").css("display", "inline-block");
 					$("#menu").css("display", "inline-block");
 				});
-			}			
-		});		
+			}
+		});
 	} else {
 		$("#masthead").hide();
 		$("#branding").css("display", "inline-block");
