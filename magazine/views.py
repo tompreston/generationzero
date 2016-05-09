@@ -1,16 +1,27 @@
 from magazine.models import (Issue, Category, Entry)
 from django.views.generic import (TemplateView, ListView, DetailView)
+from django.views.generic.base import ContextMixin
 from django.shortcuts import get_object_or_404
 
 
-class SplashPageView(TemplateView):
-
-    template_name = "splash_page.html"
+class CategoriesContextMixin(ContextMixin):
 
     def get_context_data(self, **kwargs):
-        context = super(SplashPageView, self).get_context_data(**kwargs)
-        context['issue_list'] = Issue.objects.filter(is_visible=True)
+        context = super(
+            CategoriesContextMixin, self).get_context_data(**kwargs)
         context['category_list'] = Category.objects.filter(is_visible=True)
+        return context
+
+
+class HomePageView(CategoriesContextMixin, TemplateView):
+
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(HomePageView, self).get_context_data(**kwargs)
+        context['entry_list'] = Entry.objects.filter(is_visible=True)\
+                                             .order_by('-created_at')
+        context['issue_list'] = Issue.objects.filter(is_visible=True)
         return context
 
 
@@ -47,7 +58,7 @@ class CategoryView(ListView):
         return context
 
 
-class EntryDetailView(DetailView):
+class EntryDetailView(CategoriesContextMixin, DetailView):
 
     template_name = 'entry_detail.html'
     context_object_name = 'entry'

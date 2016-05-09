@@ -33,8 +33,17 @@ class Entry(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     content = MarkdownField()
+    well_image = models.CharField(
+        max_length=200,
+        blank=True,
+        help_text="Image to fill this entry's well (higher "+
+                  "priority than 'well text').")
+    well_text = models.TextField(
+        blank=True,
+        help_text="Text to fill this entry's well (if blank, 'entry "+
+                  "content' will be used).")
     issue = models.ForeignKey(Issue, blank=True, null=True)
-    category = models.ForeignKey(Category)
+    categories = models.ManyToManyField(Category)
     created_by = models.ForeignKey(User)
     created_at = models.DateTimeField(default=timezone.now)
     modified_at = models.DateTimeField(auto_now=True)
@@ -42,3 +51,8 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.title
+
+    def categories_display(self):
+        # This is DB heavy
+        return ', '.join(map(str, self.categories.all()))
+    categories_display.short_description = 'Categories'

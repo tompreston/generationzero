@@ -23,7 +23,7 @@ Structure
 ---------
 So, currently the website works like this:
 
-    + splash_page (w/list of issues and categories)
+    + home_page (w/list of issues and categories)
       + issue page (w/list of entries in that issue)
         - entry in issue page (w/breadcrumb back to issue)
       + category page (w/list of entries in that category)

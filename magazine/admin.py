@@ -21,7 +21,11 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class EntryAdmin(admin.ModelAdmin):
 
-    list_display = ('title', 'slug', 'issue', 'category', 'is_visible')
+    list_display = ('title',
+                    'slug',
+                    'issue',
+                    'categories_display',
+                    'is_visible')
     prepopulated_fields = {"slug": ("title",)}
 
 

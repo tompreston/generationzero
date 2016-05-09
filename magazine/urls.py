@@ -2,14 +2,14 @@ from django.conf.urls import url
 from django.views.generic.dates import ArchiveIndexView
 
 from magazine.models import Entry
-from magazine.views import (SplashPageView, IssueView, CategoryView,
+from magazine.views import (HomePageView, IssueView, CategoryView,
                             EntryDetailView)
 
 
 urlpatterns = [
     url(r'^$',
-        SplashPageView.as_view(),
-        name="splash_page"),
+        HomePageView.as_view(),
+        name="home_page"),
 
     url(r'^issue/(?P<issue_slug>[\w-]+)/$',
         IssueView.as_view(),

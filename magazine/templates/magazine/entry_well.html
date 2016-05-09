@@ -1,0 +1,23 @@
+<div class="entry-well">
+    <a href="{% url 'entry' entry.slug %}" class="entry-link"><span></span></a>
+    <div class="entry-well-header">
+        <div class="entry-well-title">
+            {{ entry.title }}
+        </div>
+        <div class="entry-well-date">
+            {{ entry.created_at|date:'d.m.y' }}
+        </div>
+        <div class="entry-well-categories">
+            {{ entry.categories_display }}
+        </div>
+    </div>
+    <div class="entry-well-content">
+    {% if entry.well_image %}
+        <img src="{{ entry.well_image }}" alt="Image for {{ entry.title }}">
+    {% elif entry.well_text %}
+        {{ entry.well_text }}
+    {% else %}
+        {{ entry.content|striptags|truncatechars:200 }}
+    {% endif %}
+    </div>
+</div>

@@ -89,20 +89,3 @@ ul {
 }
 
 
-.grid {
-  height: 100vh !important;
-}
-.grid_item {
-  margin: 0 2.665% 5% 2.665%;
-  width: 28%;
-  height:auto;
-}
-.grid_item:hover {
-  cursor: pointer;
-}
-.grid_item img{
-  width:100%;
-}
-.grid_item p{
-  text-align: center;
-}
