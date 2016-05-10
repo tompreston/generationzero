@@ -15,7 +15,7 @@ class CategoriesContextMixin(ContextMixin):
 
 class HomePageView(CategoriesContextMixin, TemplateView):
 
-    template_name = "index.html"
+    template_name = "magazine/index.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
@@ -60,7 +60,7 @@ class CategoryView(ListView):
 
 class EntryDetailView(CategoriesContextMixin, DetailView):
 
-    template_name = 'entry_detail.html'
+    template_name = 'magazine/entry_detail.html'
     context_object_name = 'entry'
 
     def get_object(self):

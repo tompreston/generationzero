@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+{% load django_markdown %}
+
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'magazine/css/entry_detail.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="entry-container">
+
+    <div class="entry-info">
+        <div class="entry-date">
+            {{ entry.created_at|date:'d.m.y' }}
+        </div>
+        <div class="entry-author">
+            {{ entry.created_by }}
+            <!-- TODO add extra authors -->
+        </div>
+        <div class="entry-categories">
+            {{ entry.categories_display }}
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <h1>{{ entry.title }}</h1>
+        {{ entry.content|markdown }}
+    </div>
+
+    <div class="entry-extra">
+        <div class="entry-social">
+            Share on Facebook/Twitter
+        </div>
+        <div class="entry-related">
+            <ul>
+                <li>Some related content</li>
+                <li>Some related content 2</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
