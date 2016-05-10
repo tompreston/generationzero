@@ -1,3 +1,26 @@
 .entry-container {
     border-top: 1px dashed rgb(0, 0, 0);
+    padding-top: 40px;
+}
+
+.entry-categories {
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.entry-info {
+    float: left;
+}
+.entry-extra {
+    float: right;
+}
+
+.entry-content {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    float: left;
+    /*TODO needs work*/
 }
