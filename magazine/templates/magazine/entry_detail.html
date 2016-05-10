@@ -14,6 +14,10 @@
 
 {% block content %}
 <div class="entry-container">
+    <div class="entry-title">
+        {{ entry.title }}
+    </div>
+
     <div class="pure-g">
 
         <div class="pure-u-5-24">
@@ -22,7 +26,7 @@
                     {{ entry.created_at|date:'d.m.y' }}
                 </div>
                 <div class="entry-author">
-                    Writer &dash; {{ entry.created_by }}
+                    Author &dash; {{ entry.created_by.get_full_name }}
                     <!-- TODO add extra authors -->
                 </div>
                 <div class="entry-categories">
@@ -33,7 +37,6 @@
 
         <div class="pure-u-14-24">
             <div class="entry-content">
-                <h1>{{ entry.title }}</h1>
                 {{ entry.content|markdown }}
             </div>
         </div>
@@ -46,7 +49,7 @@
                 <div class="entry-related">
                     <ul>
                         <li>related content</li>
-                        <li>related content 2</li>
+                        <li>related content</li>
                     </ul>
                 </div>
             </div>
