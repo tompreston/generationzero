@@ -10,17 +10,18 @@
 }
 
 .entry-info {
-    float: left;
+    /*float: left;*/
 }
 .entry-extra {
-    float: right;
+    /*float: right;*/
+    display: block;
 }
 
 .entry-content {
     border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    float: left;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*display: block;*/
+    /*float: left;*/
     /*TODO needs work*/
 }
