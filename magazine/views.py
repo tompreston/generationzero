@@ -19,10 +19,18 @@ class HomePageView(CategoriesContextMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
-        context['entry_list'] = Entry.objects.filter(is_visible=True)\
-                                             .order_by('-created_at')
+        context['entry_list'] = self.get_entry_list()
         context['issue_list'] = Issue.objects.filter(is_visible=True)
         return context
+
+    def get_entry_list(self):
+        entries = Entry.objects.filter(is_visible=True)\
+                               .order_by('-created_at')
+        category = self.kwargs.get('category_slug')
+        if category:
+            entries = entries.filter(categories__slug=category)
+        return entries
+
 
 
 class IssueView(ListView):
@@ -41,21 +49,21 @@ class IssueView(ListView):
         return context
 
 
-class CategoryView(ListView):
+# class CategoryView(ListView):
 
-    template_name = 'category.html'
-    context_object_name = 'entry_list'
+#     template_name = 'category.html'
+#     context_object_name = 'entry_list'
 
-    def get_queryset(self):
-        return Entry.objects.filter(
-            category__slug=self.kwargs['category_slug'])
+#     def get_queryset(self):
+#         return Entry.objects.filter(
+#             categories__slug=self.kwargs['category_slug'])
 
-    def get_context_data(self, **kwargs):
-        context = super(CategoryView, self).get_context_data(**kwargs)
-        context['category'] = get_object_or_404(
-            Category,
-            slug=self.kwargs['category_slug'])
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super(CategoryView, self).get_context_data(**kwargs)
+#         context['category'] = get_object_or_404(
+#             Category,
+#             slug=self.kwargs['category_slug'])
+#         return context
 
 
 class EntryDetailView(CategoriesContextMixin, DetailView):
