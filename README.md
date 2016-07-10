@@ -89,19 +89,3 @@ environment with:
     deactivate
 
 
-Code Style Guidelines
----------------------
-I'm super anal about these sorts of things but it doesn't matter if
-you're not. The two rules I tend to follow are:
-
-    - indent in Python is 4 SPACES (this is super important)
-    - HTML is either 2 or 4 SPACES (but who cares it's HTML)
-    - TABs are EVIL
-
-If you're interested, it's worth reading:
-
-    https://www.kernel.org/doc/Documentation/CodingStyle
-    https://www.python.org/dev/peps/pep-0008/
-    http://semver.org/
-
-I disagree with Linus on the 8 spaces thing (maybe for C...)
