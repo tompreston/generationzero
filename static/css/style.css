@@ -1,11 +1,46 @@
-* {
-    font-family: impact;
-}
-
-body {
+@font-face{
+    font-family: "Clearface-Bold";
+    src: url('../font/Clearface-Bold.ttf'),
+    url('../font/Clearface-Bold.eot'); /* IE */
 }
 
 /* TYPOGRAPHY */
+@font-face{
+    font-family: "DIN-Black";
+    src: url('../font/DIN-Black.ttf'),
+    url('../font/DIN-Black.eot'); /* IE */
+}
+
+@font-face{
+    font-family: "FuturaStd-BookOblique";
+    src: url('../font/FuturaStd-BookOblique.ttf'),
+    url('../font/FuturaStd-BookOblique.eot'); /* IE */
+}
+
+body {
+    font-family: DIN-Black;
+}
+
+.entry-container,
+.entry-info {
+    font-family: DIN-Black;
+}
+
+.entry-content {
+    font-family: Clearface-Bold;
+
+}
+
+.entry-categories,
+.entry-well-categories {
+    font-family: FuturaStd-BookOblique;
+}
+
+.entry-well-content {
+    font-family: Clearface-Bold;
+}
+
+
 a {
     color: #000;
     text-decoration: none;
@@ -18,6 +53,7 @@ a:hover {
 }
 
 #navigation ul {
+    font-family: DIN-Black;
     margin: 0;
     padding: 0;
 }
@@ -67,7 +103,7 @@ a:hover {
     width: 100%;
 }
 #navigation {
-    margin: 10px 0 0 0;
+    margin: 13px 0 0 0;
     display: inline-block;
 }
 #navigation li{

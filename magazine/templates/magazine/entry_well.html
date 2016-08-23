@@ -14,10 +14,14 @@
     <div class="entry-well-content">
     {% if entry.well_image %}
         <img src="{{ entry.well_image }}" alt="Image for {{ entry.title }}">
-    {% elif entry.well_text %}
-        {{ entry.well_text }}
     {% else %}
-        {{ entry.content|striptags|truncatechars:200 }}
+        <div class="entry-well-content-text">
+        {% if entry.well_text %}
+                {{ entry.well_text }}
+        {% else %}
+            {{ entry.content|striptags|truncatechars:200 }}
+        {% endif %}
+        </div>
     {% endif %}
     </div>
 </div>

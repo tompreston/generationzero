@@ -22,6 +22,7 @@
     background: white;
     width: 100%;
     border-top: 1px dashed rgb(0, 0, 0);
+    padding: 10px 5px 10px 5px;
 }
 .entry-well-title,
 .entry-well-date {
@@ -29,17 +30,17 @@
 }
 
 .entry-well-categories {
-    font-family: sans-serif;
-    font-style: italic;
     font-size: 0.8em;
 }
 
 .entry-well-content {
     background: black;
-    font-family: monospace;
     font-size: 2em;
-    font-weight: bold;
     color: white;
+}
+
+.entry-well-content-text {
+    padding: 20px;
 }
 
 .entry-well-content img {
