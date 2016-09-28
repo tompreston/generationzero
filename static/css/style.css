@@ -124,4 +124,11 @@ a:hover {
     margin: 0 auto;
 }
 
-
+/* footer stuff */
+.footer {
+  width: 100%;
+  font-family: "FuturaStd-BookOblique";
+  font-size: 0.8em;
+  color: rgb(200, 200, 200);
+  text-align: center;
+}
