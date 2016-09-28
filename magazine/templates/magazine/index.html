@@ -32,4 +32,12 @@
 
 {% block js %}
 <script src="{% static 'magazine/js/entry_well.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var grid = $('.grid').masonry({
+      itemSelector: '.grid_item',
+      transitionDuration: 0
+    });
+  });
+</script>
 {% endblock js %}
