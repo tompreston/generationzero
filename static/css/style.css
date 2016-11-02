@@ -22,7 +22,8 @@ body {
 }
 
 .entry-container,
-.entry-info {
+.entry-info,
+.entry-title {
     font-family: DIN-Black;
 }
 
