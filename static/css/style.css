@@ -98,6 +98,8 @@ a:hover {
     z-index: 9000;
 }
 #branding {
+    /* display is none at first so it can fade in */
+    display: none;
     float: left;
     position: relative;
     width: 0;

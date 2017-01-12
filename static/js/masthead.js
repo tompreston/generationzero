@@ -4,14 +4,14 @@ $(document).ready(function(){
 			var scrollPosition = $(window).scrollTop();
 			if (scrollPosition > 190){
 				$("#masthead").slideUp( "slow", function(){
-					$("#branding").css("display", "inline-block");
+					$("#branding").fadeIn();
 					$("#menu").css("display", "inline-block");
 				});
 			}
 		});
 	} else {
 		$("#masthead").hide();
-		$("#branding").css("display", "inline-block");
+		$("#branding").fadeIn();
 		$("#menu").css("display", "inline-block");
 	}
 });
