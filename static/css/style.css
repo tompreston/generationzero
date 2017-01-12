@@ -76,35 +76,40 @@ a:hover {
     /* center all inline content */
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 #header {
     padding: 2% 0;
     width: 90%;
     margin: 0 auto;
 }
-#header div{
+#header div {
     vertical-align: middle;
 }
 #masthead {
     padding: 2% 0;
-  text-align: center;
-  width: 90%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  position: relative;
-  z-index: 9000;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: relative;
+    z-index: 9000;
 }
 #branding {
     float: left;
-    width: 8%;
+    position: relative;
+    width: 0;
+    height: 0;
 }
 #branding img{
-    width: 100%;
+    position: absolute;
+    top: -13px;
+    height: 52px;
 }
 #navigation {
-    margin: 13px 0 0 0;
+    margin: 0;
     display: inline-block;
 }
 #navigation li{
@@ -112,7 +117,7 @@ a:hover {
     margin: 0 20px;
 }
 #navigation a{
-    font-size: 30px;
+    font-size: 26px;
 }
 #menu {
     float: right;
