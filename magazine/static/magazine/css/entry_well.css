@@ -8,12 +8,7 @@
   height:100%;
   top:0;
   left: 0;
-
   z-index: 1;
-
-  /* fixes overlap error in IE7/8,
-     make sure you have an empty gif */
-  /*background-image: url('empty.gif');*/
 }
 
 .entry-well-header {
@@ -45,4 +40,15 @@
 
 .entry-well-content img {
     width: 100%
+}
+
+/* Smartphones */
+@media only screen and (max-width: 760px) {
+    .entry-well-header {
+        display: block;
+        position: static;
+    }
+    .entry-well-content {
+        /*padding-top: 90px;*/
+    }
 }

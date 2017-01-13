@@ -1,4 +1,6 @@
 #header_container {
+    /* replace the bottom margain with a black border */
+    margin-bottom: 0px;
     border-bottom: 5px solid rgb(0, 0, 0);
 }
 
@@ -10,6 +12,10 @@
 .entry-info {
     /*float: left;*/
 }
+.entry-info.smartphone {
+    display: none;
+}
+
 .entry-extra {
     /*float: right;*/
     /*display: block;*/
@@ -24,12 +30,6 @@
 }
 
 .entry-content {
-    /*border: 1px solid black;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*display: block;*/
-    /*float: left;*/
-    /*TODO needs work*/
     margin: 0 20px 0 20px;
 }
 
@@ -39,4 +39,24 @@
 
 .entry-content img {
     width: 100%;
+}
+
+
+/* Smartphones */
+@media only screen and (max-width: 760px) {
+    .entry-title {
+        font-size: 1.5em;
+        text-align: left;
+        padding: 20px 0 10px 0;
+    }
+    .entry-info.smartphone {
+        display: block;
+        padding-bottom: 10px;
+    }
+    .entry-info.notsmartphone {
+        display: none;
+    }
+    .entry-content {
+        margin: 0;
+    }
 }

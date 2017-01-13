@@ -1,17 +1,20 @@
 $(document).ready(function(){
-	if(window.location.href == (window.location.origin + "/")){
+	// if we're on the home page and not on a mobile device
+	if(window.location.href == (window.location.origin + "/") &&
+			$('#masthead').css('display') != 'none') {
 		$(window).scroll(function() {
 			var scrollPosition = $(window).scrollTop();
 			if (scrollPosition > 190){
-				$("#masthead").slideUp( "slow", function(){
-					$("#branding").css("display", "inline-block");
-					$("#menu").css("display", "inline-block");
+				$("#masthead").slideUp({
+					duration: 'slow',
+					start: function(){
+						$("#branding").fadeIn();
+					}
 				});
 			}
 		});
 	} else {
 		$("#masthead").hide();
-		$("#branding").css("display", "inline-block");
-		$("#menu").css("display", "inline-block");
+		$("#branding").show();
 	}
 });

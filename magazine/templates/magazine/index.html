@@ -21,7 +21,7 @@
     <div class="gutter-sizer"></div>
 
     {% for entry in entry_list %}
-    <div class="grid-item">
+    <div class="grid-item {% if forloop.first %}first-entry{% endif %}">
         {% include 'magazine/entry_well.html' with entry=entry %}
     </div>
     {% endfor %}
