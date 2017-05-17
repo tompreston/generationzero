@@ -99,10 +99,20 @@ a:hover {
     width: 0;
     height: 0;
 }
-#branding img {
+#branding #main-logo-small {
     position: absolute;
     top: -13px;
     height: 52px;
+}
+#branding #twitter-link,
+#branding #instagram-link {
+    position: absolute;
+    top: 57px;
+    left: 10px;
+    height: 25px;
+}
+#branding #instagram-link {
+    left: 47px;
 }
 
 #navigation ul {
