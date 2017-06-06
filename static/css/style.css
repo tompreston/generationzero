@@ -42,16 +42,16 @@ body {
     font-family: Clearface-Bold;
 }
 
-
 a {
-    color: #000;
+    color: #777;
     text-decoration: none;
 }
 a:visited {
-  color: #000;
+  color: #777;
 }
 a:hover {
-  color: #999;
+  color: #777;
+  text-decoration: underline;
 }
 
 /* MISC POSITIONINGS */
@@ -72,6 +72,16 @@ a:hover {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 5px;
+}
+#header_container a {
+    color: #000;
+    text-decoration: none;
+}
+#header_container a:visited {
+  color: #000;
+}
+#header_container a:hover {
+  color: #999;
 }
 #header {
     margin: 30px 20px;
