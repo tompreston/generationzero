@@ -88,23 +88,3 @@ environment with:
 
     deactivate
 
-
-AWS
-===
-
-https://realpython.com/blog/python/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/#static-files
-
-
-Upload and run with latest commit:
-
-    eb deploy
-
-Open website
-
-    eb open
-
-SSH into website
-
-    eb ssh
-
-
