@@ -49,13 +49,16 @@
           </ul>
         </div>
         <div id="menu-burger-control">
-          <a href="#menu">
+          <a href="#menu-burger-open">
             &#9776;
+          </a>
+          <a href="#menu-burger-close" class="hide">
+            &#x00D7;
           </a>
         </div>
       </div>
     </div>
-
+    {% include "drop_down_menu.html" %}
     <div id="main_content">
       {% block content %}
       {# here is where the actual content goes #}
