@@ -1,7 +1,16 @@
 Generation Zero
 ===============
-The Generation Zero website.
+The [Generation Zero](http://www.generationzero.org.uk/) website.
 
+Todo
+----
+- Drop down menu
+- Author page
+- Issues page
+
+
+Django
+------
 If you're new to Django, here's the layout:
 
     generationzero/       <- project directory
