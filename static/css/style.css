@@ -138,9 +138,12 @@ a:hover {
     font-size: 26px;
 }
 
-#menu {
+#menu-burger-control {
     float: right;
+    position: relative;
+    top: -37px;
     width: 8%;
+    font-size: 27px;
 }
 
 /* MAIN CONTENT */
