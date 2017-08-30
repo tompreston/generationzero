@@ -146,6 +146,11 @@ a:hover {
     font-size: 27px;
 }
 
+#menu-dropdown {
+    border-top: 5px solid rgb(0, 0, 0);
+    padding: 30px 20px;
+}
+
 /* MAIN CONTENT */
 #main_content {
     width: 80%;
@@ -164,7 +169,7 @@ a:hover {
 /* Smartphones */
 @media only screen and (max-width: 760px) {
     #header_container {
-        /* replace the bottom margain with a black border */
+        /* replace the bottom margin with a black border */
         margin-bottom: 0px;
         border-bottom: 5px solid rgb(0, 0, 0);
     }
