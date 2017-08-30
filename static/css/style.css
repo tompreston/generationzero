@@ -148,7 +148,10 @@ a:hover {
 
 #menu-dropdown {
     border-top: 5px solid rgb(0, 0, 0);
+    border-bottom: 5px solid rgb(150, 150, 150);
+    margin-bottom: 20px;
     padding: 30px 20px;
+    width: 100%;
 }
 
 /* MAIN CONTENT */
