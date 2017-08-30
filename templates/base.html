@@ -12,6 +12,13 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
     {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
     <script type="text/javascript" src="{% static 'js/jquery-1.12.0.min.js' %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static 'js/masthead.js' %}" charset="utf-8"></script>
     {% endblock css %}
@@ -88,3 +95,4 @@
   </script>
 
 </html>
+
