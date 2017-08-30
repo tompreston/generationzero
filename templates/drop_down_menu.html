@@ -1,14 +1,36 @@
-<div id="menu-dropdown">
-  <div id="menu-dropdown-categories">
-    Categories
+<div id="menu-dropdown" class="pure-g">
+  <div id="menu-dropdown-categories" class="pure-u-1-2">
+    <div class="menu-dropdown-title">
+      Categories
+    </div>
+    <ul>
+      {% for category in category_list %}
+      <li>
+        <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+      </li>
+      {% empty %}
+      <li>No categories</li>
+      {% endfor %}
+    </ul>
   </div>
-  <div id="menu-dropdown-contact-and-social">
-    <div id="menu-dropdown-contact">
+  <div id="menu-dropdown-contact" class="pure-u-1-4">
+    <div class="menu-dropdown-title">
       Contact
     </div>
-    <div id="menu-dropdown-social">
+    <p>
+      <a href="mailto:jacob.ormrod@hotmail.com">jacob.ormrod@hotmail.com</a>
+    </p>
+    <p>
+      For submissions, please contact us via email or Facebook.
+    </p>
+  </div>
+  <div id="menu-dropdown-social"class="pure-u-1-4">
+    <div class="menu-dropdown-title">
       Social
     </div>
+    one
+    two
+    three
   </div>
 </div>
 
