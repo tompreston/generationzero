@@ -4,6 +4,10 @@
     border-bottom: 5px solid rgb(0, 0, 0);
 }
 
+div#menu-dropdown {
+    border-top: none;
+}
+
 .entry-categories {
     font-style: italic;
     font-size: 0.8em;

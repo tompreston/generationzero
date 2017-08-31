@@ -145,7 +145,7 @@ div#menu-dropdown.hide,
 
 #menu-dropdown {
     border-top: 5px solid rgb(0, 0, 0);
-    border-bottom: 5px solid rgb(200, 200, 200);
+    /*border-bottom: 5px solid rgb(200, 200, 200);*/
     margin-bottom: 20px;
     padding: 20px 20px;
     width: 100%;
@@ -203,7 +203,8 @@ p#menu-dropdown-contact-email {
         border-bottom: 5px solid rgb(0, 0, 0);
     }
     #masthead,
-    #navigation {
+    #navigation,
+    #menu-burger-control {
         display: none;
     }
     #header {
