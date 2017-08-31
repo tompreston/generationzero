@@ -61,6 +61,7 @@ a:hover {
 .clear{
     clear: both;
 }
+div#menu-dropdown.hide,
 .hide {
     display: none;
 }
