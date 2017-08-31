@@ -17,29 +17,32 @@
     url('../font/FuturaStd-BookOblique.eot'); /* IE */
 }
 
-body {
-    font-family: DIN-Black;
-    margin: 0;
+/* default to DIN-Black, the specificity of the elements here counts */
+html body * {
+    font-family: "DIN-Black";
 }
 
-.entry-container,
-.entry-info,
-.entry-title {
-    font-family: DIN-Black;
+#menu-dropdown .menu-dropdown-title {
+    font-family: "DIN-Black";
 }
 
+#menu-dropdown a,
+#menu-dropdown p,
 .entry-content {
     font-family: "Gill Sans", sans-serif;
-
 }
 
 .entry-categories,
 .entry-well-categories {
-    font-family: FuturaStd-BookOblique;
+    font-family: "FuturaStd-BookOblique";
 }
 
 .entry-well-content {
     font-family: Clearface-Bold;
+}
+
+body {
+    margin: 0;
 }
 
 a {
@@ -73,13 +76,16 @@ a:hover {
     text-transform: uppercase;
     margin-bottom: 5px;
 }
+#menu-dropdown a,
 #header_container a {
     color: #000;
     text-decoration: none;
 }
+#menu-dropdown a:visited,
 #header_container a:visited {
   color: #000;
 }
+#menu-dropdown a:hover,
 #header_container a:hover {
   color: #999;
 }
@@ -114,19 +120,8 @@ a:hover {
     top: -13px;
     height: 52px;
 }
-#branding #twitter-link,
-#branding #instagram-link {
-    position: absolute;
-    top: 57px;
-    left: 10px;
-    height: 25px;
-}
-#branding #instagram-link {
-    left: 47px;
-}
 
 #navigation ul {
-    font-family: DIN-Black;
     margin: 0;
     padding: 0;
 }
@@ -138,6 +133,7 @@ a:hover {
     font-size: 26px;
 }
 
+/* menu dropdown */
 #menu-burger-control {
     float: right;
     position: relative;
@@ -148,10 +144,40 @@ a:hover {
 
 #menu-dropdown {
     border-top: 5px solid rgb(0, 0, 0);
-    border-bottom: 5px solid rgb(150, 150, 150);
+    border-bottom: 5px solid rgb(200, 200, 200);
     margin-bottom: 20px;
-    padding: 30px 20px;
+    padding: 20px 20px;
     width: 100%;
+}
+
+#menu-dropdown div {
+    font-size: 20px;
+}
+
+#menu-dropdown-contact p {
+    margin: 0;
+}
+p#menu-dropdown-contact-email {
+    margin-bottom: 5px;
+}
+
+.menu-dropdown-title {
+    margin-bottom: 5px;
+}
+
+#menu-dropdown-social ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu-dropdown-social ul > li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+#twitter-link,
+#instagram-link {
+    height: 25px;
 }
 
 /* MAIN CONTENT */
@@ -162,11 +188,10 @@ a:hover {
 
 /* footer stuff */
 .footer {
-  width: 100%;
-  font-family: "FuturaStd-BookOblique";
-  font-size: 0.8em;
-  color: rgb(200, 200, 200);
-  text-align: center;
+    width: 100%;
+    border-top: 4px solid rgb(0, 0, 0);
+    font-family: "DIN-Black";
+    text-align: center;
 }
 
 /* Smartphones */
@@ -177,8 +202,7 @@ a:hover {
         border-bottom: 5px solid rgb(0, 0, 0);
     }
     #masthead,
-    #navigation,
-    .sociallink {
+    #navigation {
         display: none;
     }
     #header {
