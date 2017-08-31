@@ -58,9 +58,6 @@ a:hover {
 }
 
 /* MISC POSITIONINGS */
-.clear{
-    clear: both;
-}
 div#menu-dropdown.hide,
 .hide {
     display: none;
@@ -197,6 +194,9 @@ p#menu-dropdown-contact-email {
 
 /* Smartphones */
 @media only screen and (max-width: 760px) {
+    .clear{
+        clear: both;
+    }
     #header_container {
         /* replace the bottom margin with a black border */
         margin-bottom: 0px;
