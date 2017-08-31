@@ -1,23 +1,25 @@
+{% load static %}
+
 <div id="menu-dropdown" class="pure-g">
   <div id="menu-dropdown-categories" class="pure-u-1-2">
     <div class="menu-dropdown-title">
       Categories
     </div>
-    <ul>
+    <div class="pure-g menu-dropdown-category-list">
       {% for category in category_list %}
-      <li>
+      <div class="pure-u-1-4 menu-dropdown-category-list-item">
         <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
-      </li>
+      </div>
       {% empty %}
-      <li>No categories</li>
+      <div>No categories</div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
   <div id="menu-dropdown-contact" class="pure-u-1-4">
     <div class="menu-dropdown-title">
       Contact
     </div>
-    <p>
+    <p id="menu-dropdown-contact-email">
       <a href="mailto:jacob.ormrod@hotmail.com">jacob.ormrod@hotmail.com</a>
     </p>
     <p>
@@ -28,9 +30,18 @@
     <div class="menu-dropdown-title">
       Social
     </div>
-    one
-    two
-    three
+    <ul>
+      <li>
+        <a href="https://twitter.com/GenZeroMag" class="sociallink">
+          <img src="{% static 'img/twitter_logo_white_on_black.png' %}" alt="GenerationZero Twitter" id="twitter-link">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/generationzer0magazine/" class="sociallink">
+          <img src="{% static 'img/instagram-glyphlogo-may2016-online.png' %}" alt="GenerationZero Instagram" id="instagram-link">
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 

@@ -37,12 +37,6 @@
           <a href="{% url 'home_page' %}">
             <img src="{% static 'img/branding.png' %}" id="main-logo-small">
           </a>
-          <a href="https://twitter.com/GenZeroMag" class="sociallink">
-            <img src="{% static 'img/twitter_logo_white_on_black.png' %}" alt="GenerationZero Twitter" id="twitter-link">
-          </a>
-	      <a href="https://www.instagram.com/generationzer0magazine/" class="sociallink">
-            <img src="{% static 'img/instagram-glyphlogo-may2016-online.png' %}" alt="GenerationZero Instagram" id="instagram-link">
-          </a>
         </div>
         <div id="navigation">
           <ul>
@@ -82,8 +76,35 @@
   {% block js %}
   {% endblock js %}
 
+  <!-- menu-dropdown event handlers-->
+<script>
+var GenerationZero = {
+  menu_dropdown_is_visible: true,
+};
+
+GenerationZero.menu_dropdown_hide = function() {
+    $("#menu-dropdown").slideUp();
+    GenerationZero.menu_dropdown_is_visible = false;
+};
+
+GenerationZero.menu_dropdown_show = function() {
+    $("#menu-dropdown").slideDown();
+    GenerationZero.menu_dropdown_is_visible = true;
+};
+
+// event handlers
+$('#menu-burger-control a').click(function() {
+  if (GenerationZero.menu_dropdown_is_visible) {
+    GenerationZero.menu_dropdown_hide();
+  } else {
+    GenerationZero.menu_dropdown_show();
+  }
+});
+</script>
+
   <!-- Google Analytics -->
   <script>
+    if (true) {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -91,6 +112,7 @@
 
     ga('create', 'UA-91746360-1', 'auto');
     ga('send', 'pageview');
+    }
 
   </script>
 
