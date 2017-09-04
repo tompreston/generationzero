@@ -28,7 +28,7 @@ html body * {
 
 #menu-dropdown a,
 #menu-dropdown p,
-.entry-content {
+#main_content .entry-container .entry-content p {
     font-family: "Gill Sans", sans-serif;
 }
 
@@ -181,6 +181,17 @@ p#menu-dropdown-contact-email {
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+.entry-content figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.entry-content figure figcaption {
+    font-family: "Gill Sans", sans-serif;
+    font-style: italic;
+    font-size: 0.8em;
 }
 
 /* footer stuff */
