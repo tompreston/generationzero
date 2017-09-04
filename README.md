@@ -4,8 +4,7 @@ The [Generation Zero](http://www.generationzero.org.uk/) website.
 
 Todo
 ----
-- Drop down menu
-- Author page
+- Author page w/short bio at end of entry + social links
 - Issues page
 
 
