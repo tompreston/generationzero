@@ -1,0 +1,25 @@
+<script type="text/javascript">
+var GenerationZero = {
+  menu_dropdown_is_visible: false,
+};
+
+GenerationZero.menu_dropdown_hide = function() {
+    $("#menu-dropdown").slideUp();
+    GenerationZero.menu_dropdown_is_visible = false;
+};
+
+GenerationZero.menu_dropdown_show = function() {
+    $("#menu-dropdown").slideDown();
+    GenerationZero.menu_dropdown_is_visible = true;
+};
+
+// event handlers
+$('#menu-burger-control a').click(function() {
+  if (GenerationZero.menu_dropdown_is_visible) {
+    GenerationZero.menu_dropdown_hide();
+  } else {
+    GenerationZero.menu_dropdown_show();
+  }
+});
+</script>
+
