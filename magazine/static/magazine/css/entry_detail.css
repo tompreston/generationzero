@@ -1,8 +1,9 @@
+/* replace the bottom margain with a black border
 #header_container {
-    /* replace the bottom margain with a black border */
     margin-bottom: 0px;
     border-bottom: 5px solid rgb(0, 0, 0);
 }
+ */
 
 div#menu-dropdown {
     border-top: none;

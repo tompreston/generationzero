@@ -72,7 +72,7 @@ div#menu-dropdown.hide,
     /* center all inline content */
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 #menu-dropdown a,
 #header_container a {
@@ -141,11 +141,9 @@ div#menu-dropdown.hide,
 }
 
 #menu-dropdown {
-    border-top: 5px solid rgb(0, 0, 0);
-    /*border-bottom: 5px solid rgb(200, 200, 200);*/
-    margin-bottom: 20px;
     padding: 20px 20px;
     width: 100%;
+    border-bottom: 2px solid rgb(200, 200, 200);
 }
 
 #menu-dropdown div {
@@ -182,6 +180,7 @@ p#menu-dropdown-contact-email {
 #main_content {
     width: 80%;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 /* footer stuff */
