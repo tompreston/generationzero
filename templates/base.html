@@ -40,9 +40,11 @@
         </div>
         <div id="navigation">
           <ul>
-            {% for category in category_list %}
+            {% for main_category in main_category_list %}
             <li>
-              <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+              <a href="{{ main_category.category.get_absolute_url }}">
+                {{ main_category.category.title }}
+              </a>
             </li>
             {% empty %}
             <li>No categories</li>

@@ -1,4 +1,4 @@
-from magazine.models import (Issue, Category, Entry)
+from magazine.models import (Issue, MainCategory, Category, Entry)
 from django.views.generic import (TemplateView, ListView, DetailView)
 from django.views.generic.base import ContextMixin
 from django.shortcuts import get_object_or_404
@@ -10,6 +10,8 @@ class CategoriesContextMixin(ContextMixin):
         context = super(
             CategoriesContextMixin, self).get_context_data(**kwargs)
         context['category_list'] = Category.objects.filter(is_visible=True)
+        context['main_category_list'] = MainCategory.objects.order_by(
+                'category__title')
         return context
 
 
