@@ -1,15 +1,16 @@
 <script type="text/javascript">
 var GenerationZero = {
   menu_dropdown_is_visible: false,
+    slide_opts: {duration: 400, easing: 'swing'},
 };
 
 GenerationZero.menu_dropdown_hide = function() {
-    $("#menu-dropdown").slideUp();
+    $("#menu-dropdown").slideUp(GenerationZero.slide_opts);
     GenerationZero.menu_dropdown_is_visible = false;
 };
 
 GenerationZero.menu_dropdown_show = function() {
-    $("#menu-dropdown").slideDown();
+    $("#menu-dropdown").slideDown(GenerationZero.slide_opts);
     GenerationZero.menu_dropdown_is_visible = true;
 };
 
