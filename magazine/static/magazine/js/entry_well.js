@@ -1,7 +1,9 @@
 /**
  * JS for entry wells
  */
-var EntryWell = {};
+var EntryWell = {
+	slide_opts: {duration: 300, easing: 'swing'},
+};
 
 
 $(document).ready(function () {
@@ -14,9 +16,9 @@ $(document).ready(function () {
 
     $('.entry-well')
     .mouseenter(function() {
-        $(this).find('.entry-well-header').show();
+        $(this).find('.entry-well-header').slideDown(EntryWell.slide_opts);
     })
     .mouseleave(function() {
-        $(this).find('.entry-well-header').hide();
+        $(this).find('.entry-well-header').slideUp(EntryWell.slide_opts);
     });
 });
