@@ -12,6 +12,13 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
     {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
     <script type="text/javascript" src="{% static 'js/jquery-1.12.0.min.js' %}" charset="utf-8"></script>
     <script type="text/javascript" src="{% static 'js/masthead.js' %}" charset="utf-8"></script>
     {% endblock css %}
@@ -30,36 +37,37 @@
           <a href="{% url 'home_page' %}">
             <img src="{% static 'img/branding.png' %}" id="main-logo-small">
           </a>
-          <a href="https://twitter.com/GenZeroMag" class="sociallink">
-            <img src="{% static 'img/twitter_logo_white_on_black.png' %}" alt="GenerationZero Twitter" id="twitter-link">
-          </a>
-	      <a href="https://www.instagram.com/generationzer0magazine/" class="sociallink">
-            <img src="{% static 'img/instagram-glyphlogo-may2016-online.png' %}" alt="GenerationZero Instagram" id="instagram-link">
-          </a>
         </div>
         <div id="navigation">
           <ul>
-            {% for category in category_list %}
+            {% for main_category in main_category_list %}
             <li>
-              <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+              <a href="{{ main_category.category.get_absolute_url }}">
+                {{ main_category.category.title }}
+              </a>
             </li>
             {% empty %}
-            <li>No categories</li>
+            <li>&nbsp;</li>
             {% endfor %}
           </ul>
         </div>
-        {% comment %}
-        <div id="menu" class="hide">
-        <!-- TODO
-          MENU
-        -->
-        &nbsp;
+        <div id="menu-burger-control">
+          <a href="#" id="menu-burger-open">
+            &#9776;
+          </a>
+          {% comment %}
+          <a href="#" id="menu-burger-close" class="hide">
+            <!--
+              &#x00D7;
+            -->
+            <img src="{% static 'img/menu_cross_27x27.png' %}">
+          </a>
+          {% endcomment %}
         </div>
-        {% endcomment %}
         <div class="clear"></div>
       </div>
     </div>
-
+    {% include "drop_down_menu.html" %}
     <div id="main_content">
       {% block content %}
       {# here is where the actual content goes #}
@@ -68,7 +76,7 @@
     </div>
 
     <footer class="footer">
-      <p>Copyright © 2016 Generation Zero</p>
+        <p>Copyright © 2016 &dash; {% now "Y" %} Generation Zero</p>
     </footer>
 
     {% endblock body %}
@@ -76,8 +84,11 @@
   {% block js %}
   {% endblock js %}
 
+  {% include "base.js.html" %}
+
   <!-- Google Analytics -->
   <script>
+    if (true) {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -85,7 +96,9 @@
 
     ga('create', 'UA-91746360-1', 'auto');
     ga('send', 'pageview');
+    }
 
   </script>
 
 </html>
+

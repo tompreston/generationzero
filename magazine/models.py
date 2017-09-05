@@ -32,6 +32,15 @@ class Category(models.Model):
         return reverse('category', kwargs={'category_slug': self.slug})
 
 
+class MainCategory(models.Model):
+    """A main-category is one which the user can browse in the top menu."""
+    category = models.OneToOneField(Category,
+        help_text="This category will appear in the header-menu")
+
+    def __str__(self):
+        return self.category.title
+
+
 class Entry(models.Model):
     """An single magazine entry."""
     title = models.CharField(max_length=200)
