@@ -83,10 +83,6 @@ div#menu-dropdown.hide,
 #header_container a:visited {
   color: #000;
 }
-#menu-dropdown a:hover,
-#header_container a:hover {
-  color: #999;
-}
 #header {
     margin: 30px 20px;
 }
