@@ -167,8 +167,7 @@ p#menu-dropdown-contact-email {
     padding-right: 5px;
 }
 
-#twitter-link,
-#instagram-link {
+.sociallink img {
     height: 25px;
 }
 
