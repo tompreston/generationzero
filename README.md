@@ -4,8 +4,10 @@ The [Generation Zero](http://www.generationzero.org.uk/) website.
 
 Todo
 ----
-- Author page w/short bio at end of entry + social links
 - Issues page
+- Author page w/short bio at end of entry + social links
+  - We need to discuss how the bio will work.
+  - Is it the same for each entry by an author
 
 
 Django
