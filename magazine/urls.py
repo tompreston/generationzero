@@ -2,10 +2,8 @@ from django.conf.urls import url
 from django.views.generic.dates import ArchiveIndexView
 
 from magazine.models import Entry
-from magazine.views import (HomePageView,
-                            IssueView,
-                            # CategoryView,
-                            EntryDetailView)
+from magazine.views import (HomePageView, IssueView, IssueListView,
+        EntryDetailView)
 
 
 urlpatterns = [
@@ -13,9 +11,8 @@ urlpatterns = [
         HomePageView.as_view(),
         name="home_page"),
 
-    # url(r'^issue/(?P<issue_slug>[\w-]+)/$',
-    #     IssueView.as_view(),
-    #     name="issue"),
+    url(r'^issue/$', IssueListView.as_view(), name="issue_list"),
+    url(r'^issue/(?P<issue_slug>[\w-]+)/$', IssueView.as_view(), name="issue"),
 
     # entry in issue
     # url(r'^issue/(?P<issue_slug>[\w-]+)/(?P<entry_slug>[\w-]+)/$',

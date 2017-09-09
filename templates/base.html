@@ -44,9 +44,10 @@
             <li>
               <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
             </li>
-            {% empty %}
-            <li>&nbsp;</li>
             {% endfor %}
+            <li>
+              <a href="{% url 'issue_list' %}">Issues</a>
+            </li>
           </ul>
         </div>
         <div id="menu-burger-control">

@@ -54,7 +54,6 @@ class HomePageView(CategoriesContextMixin, TemplateView):
         return entries
 
 
-
 class IssueView(ListView):
 
     template_name = 'issue.html'
@@ -69,6 +68,15 @@ class IssueView(ListView):
             Issue,
             slug=self.kwargs['issue_slug'])
         return context
+
+
+class IssueListView(ListView):
+
+    template_name = 'issue_list.html'
+    context_object_name = 'issue_list'
+
+    def get_queryset(self):
+        return Issue.objects.filter(is_visible=True)
 
 
 # class CategoryView(ListView):
