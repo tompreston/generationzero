@@ -5,6 +5,7 @@ The [Generation Zero](http://www.generationzero.org.uk/) website.
 Todo
 ----
 - Issues page
+- Menu burger close cross
 - Author page w/short bio at end of entry + social links
   - We need to discuss how the bio will work.
   - Is it the same for each entry by an author
