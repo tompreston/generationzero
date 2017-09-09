@@ -1,14 +1,11 @@
 <div class="issue-well">
     <a href="{% url 'issue' issue.slug %}" class="issue-link"><span></span></a>
     <div class="issue-well-header">
+        <div class="issue-well-number">
+            {{ issue.number }}
+        </div>
         <div class="issue-well-title">
             {{ issue.title }}
-        </div>
-        <div class="issue-well-date">
-            {{ issue.created_at|date:'d.m.y' }}
-        </div>
-        <div class="issue-well-categories">
-            {{ issue.categories_display }}
         </div>
     </div>
     <div class="issue-well-content">

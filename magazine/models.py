@@ -9,6 +9,7 @@ class Issue(models.Model):
     """An issue is a themed collection of blog entries with accompanying text"""
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
+    number = models.IntegerField()
     introduction = models.TextField()
     # TODO make this generic?
     well_image = models.CharField(
