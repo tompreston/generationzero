@@ -1,0 +1,17 @@
+#main_content {
+    width: 100%;
+}
+
+#issue-list-header {
+    margin: 50px auto;
+    width: 600px;
+    font-size: 1.3em;
+    font-family: "Gill Sans", sans-serif;
+    text-align: center;
+}
+
+#issue-list-container {
+    background: black;
+    margin: 0;
+}
+
