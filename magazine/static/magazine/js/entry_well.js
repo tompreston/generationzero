@@ -21,4 +21,16 @@ $(document).ready(function () {
     .mouseleave(function() {
         $(this).find('.entry-well-header').slideUp(EntryWell.slide_opts);
     });
+
+    // init Masonry
+    var $grid = $('.grid').masonry({
+      itemSelector: '.grid_item',
+      transitionDuration: 0
+    });
+
+    // layout Masonry after each image loads
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry('layout');
+    });
+
 });

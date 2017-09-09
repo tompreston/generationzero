@@ -33,21 +33,5 @@
 
 {% block js %}
 <script src="{% static 'magazine/js/entry_well.js' %}"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-
-    // init Masonry
-    var $grid = $('.grid').masonry({
-      itemSelector: '.grid_item',
-      transitionDuration: 0
-    });
-
-    // layout Masonry after each image loads
-    $grid.imagesLoaded().progress(function() {
-      $grid.masonry('layout');
-    });
-
-  });
-</script>
 {% endblock js %}
 
