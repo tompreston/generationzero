@@ -6,13 +6,33 @@ from django.shortcuts import get_object_or_404
 
 class CategoriesContextMixin(ContextMixin):
 
+    MAX_NUM_DEFAULT_CATEGORIES = 6
+
     def get_context_data(self, **kwargs):
         context = super(
             CategoriesContextMixin, self).get_context_data(**kwargs)
         context['category_list'] = Category.objects.filter(is_visible=True)
-        context['main_category_list'] = MainCategory.objects.order_by(
-                'category__title')
+        context['main_category_list'] = self.get_main_category_list()
         return context
+
+    def get_main_category_list(self):
+        """Returns a list of main categories ordered alphabetically by title.
+        This list is either specified in admin or the categories with the most
+        entries.
+        """
+        # TODO maybe make this some kind of try/except
+        # give me all the categories in the main category list
+        main_category_list = Category.objects.filter(
+                maincategory__pk__gt = 0).order_by('title')
+        if len(main_category_list) == 0:
+            main_category_list = self.get_popular_categories()
+        return main_category_list
+
+    def get_popular_categories(self):
+        """Return a list of the most popular categories."""
+        # TODO this must order_by number of entries, not title
+        return Category.objects.order_by(
+                'title')[:self.MAX_NUM_DEFAULT_CATEGORIES]
 
 
 class HomePageView(CategoriesContextMixin, TemplateView):

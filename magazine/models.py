@@ -33,9 +33,13 @@ class Category(models.Model):
 
 
 class MainCategory(models.Model):
-    """A main-category is one which the user can browse in the top menu."""
+    """A main-category is one which the user can browse in the top menu. If
+    there are none specified, then the categories are ordered by number of
+    entries.
+    """
     category = models.OneToOneField(Category,
-        help_text="This category will appear in the header-menu")
+        help_text="This category will appear in the header-menu. If there are "
+        "no main-categories then the most popular ones will be displayed.")
 
     def __str__(self):
         return self.category.title
