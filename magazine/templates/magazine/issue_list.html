@@ -1,0 +1,35 @@
+{# issue list page #}
+{% extends "base.html" %}
+
+
+{% load static %}
+
+
+{% block css %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}" charset="utf-8"></script>
+<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'magazine/css/issue_list.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="grid">
+    <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
+
+    {% for issue in issue_list %}
+    <div class="grid-item {% if forloop.first %}first-entry{% endif %}">
+        {% include 'magazine/issue_well.html' with issue=issue %}
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'magazine/js/entry_well.js' %}"></script>
+{% endblock js %}
+

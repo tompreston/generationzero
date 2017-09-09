@@ -10,6 +10,16 @@ class Issue(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     introduction = models.TextField()
+    # TODO make this generic?
+    well_image = models.CharField(
+        max_length=200,
+        blank=True,
+        help_text="Image to fill this issue's well (higher "+
+                  "priority than 'well text').")
+    well_text = models.TextField(
+        blank=True,
+        help_text="Text to fill this issue's well (if blank, 'issue "+
+                  "content' will be used).")
     created_at = models.DateTimeField(default=timezone.now)
     modified_at = models.DateTimeField(auto_now=True)
     is_visible = models.BooleanField(default=True)
