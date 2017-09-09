@@ -6,9 +6,10 @@ from django.utils import timezone
 
 
 class Issue(models.Model):
-    """An issue is a collection of blog entries."""
+    """An issue is a themed collection of blog entries with accompanying text"""
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
+    introduction = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
     modified_at = models.DateTimeField(auto_now=True)
     is_visible = models.BooleanField(default=True)
