@@ -17,16 +17,15 @@ If you're new to Django, here's the layout:
     generationzero/       <- project directory
         generationzero/   <- settings and stuff
         magazine/         <- the `magazine` app
-        static/
-            css/          <- stylesheets
+        static/           <- static files, css/js/images
         templates/        <- HTML templates for the website
             base.html     <- other templates inherit from this
             *.html        <- templates for views
         manage.py         <- project control
         requirements.txt  <- packages reqired for this project
 
-The idea is that the `magazine` app is generic so that it can be repurposed
-for other projects (`my rad magazine website` or `generation one` etc).
+In a perfect world the `magazine` app is generic so that it can be repurposed
+for other projects, such as `my rad magazine website` or `generation one` etc.
 
 
 Structure
@@ -40,11 +39,6 @@ So, currently the website works like this:
         - entry in category page (w/breadcrumb back to category)
     - entry page (just on it's own atm)
     - archive TODO
-
-TODO: Can an entry be a part of many categories? So can someone write
-something that goes into `Art` and `Tech` or should we keep it to one
-category. Remember: just because you CAN do something doesn't mean that
-you SHOULD!
 
 
 Getting Started
@@ -61,7 +55,7 @@ Clone the repo:
 
 Setup a virtual environment directory called `venv` and then activate it:
 
-    virtualenv venv
+    python3 -m venv venv
     source venv/bin/activate
 
 Your command line should change to indicate that you're now using the
