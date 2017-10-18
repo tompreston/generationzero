@@ -54,7 +54,7 @@ class HomePageView(CategoriesContextMixin, TemplateView):
         return entries
 
 
-class IssueView(ListView):
+class IssueView(CategoriesContextMixin, ListView):
 
     template_name = 'magazine/issue.html'
     context_object_name = 'entry_list'
