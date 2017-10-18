@@ -37,8 +37,9 @@ html body * {
     font-family: "FuturaStd-BookOblique";
 }
 
-.entry-well-content {
-    font-family: Clearface-Bold;
+.issue-well .issue-well-content .issue-well-content-text,
+.entry-well .entry-well-content .entry-well-content-text {
+    font-family: "Clearface-Bold";
 }
 
 body {
