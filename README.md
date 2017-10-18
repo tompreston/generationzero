@@ -9,6 +9,7 @@ CSS/frontend people! Yes *YOU*! We need your help! For free! Wee!
 Todo
 ----
 - Issues page
+- Fixed width of website on large displays
 - Menu burger close cross
 - Author page w/short bio at end of entry + social links
   - We need to discuss how the bio will work.
