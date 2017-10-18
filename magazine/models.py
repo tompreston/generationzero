@@ -71,7 +71,7 @@ class Entry(models.Model):
         blank=True,
         help_text="Text to fill this entry's well (if blank, 'entry "+
                   "content' will be used).")
-    issue = models.ForeignKey(Issue, blank=True, null=True)
+    issue = models.ForeignKey(Issue, blank=True, null=True, default=None)
     categories = models.ManyToManyField(Category)
     created_by = models.ForeignKey(User)
     created_at = models.DateTimeField(default=timezone.now)
