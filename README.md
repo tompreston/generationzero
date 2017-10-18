@@ -2,6 +2,10 @@ Generation Zero
 ===============
 The [Generation Zero](http://www.generationzero.org.uk/) website.
 
+CSS/frontend people! Yes *YOU*! We need your help! For free! Wee!
+(Tom sucks at CSS - it needs a big tidy up)
+
+
 Todo
 ----
 - Issues page
