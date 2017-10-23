@@ -28,16 +28,20 @@
   </head>
   <body>
     {% block body %}
+
+    <div id="masthead">
+      <img src="{% static 'img/branding.png' %}">
+    </div>
+
     <div id="header_container">
-      <div id="masthead">
-        <img src="{% static 'img/branding.png' %}">
+
+      <div id="branding">
+        <a href="{% url 'home_page' %}">
+          <img src="{% static 'img/branding.png' %}" id="main-logo-small">
+        </a>
       </div>
+
       <div id="header">
-        <div id="branding">
-          <a href="{% url 'home_page' %}">
-            <img src="{% static 'img/branding.png' %}" id="main-logo-small">
-          </a>
-        </div>
         <div id="navigation">
           <ul>
             {% for category in main_category_list %}
@@ -50,22 +54,25 @@
             </li>
           </ul>
         </div>
-        <div id="menu-burger-control">
-          <a href="#" id="menu-burger-open">
-            &#9776;
-          </a>
-          {% comment %}
-          <a href="#" id="menu-burger-close" class="hide">
-            <!--
-              &#x00D7;
-            -->
-            <img src="{% static 'img/menu_cross_27x27.png' %}">
-          </a>
-          {% endcomment %}
-        </div>
-        <div class="clear"></div>
+      </div>
+
+      <div id="menu-burger-control">
+        <a href="#" id="menu-burger-open">&#9776;</a>
+        {% comment %}
+        <a href="#" id="menu-burger-close">&#x00d7;</a>
+        {% endcomment %}
+      </div>
+
+    </div>
+
+    <div id="header_mobile">
+      <div id="branding_mobile">
+        <a href="{% url 'home_page' %}">
+          <img src="{% static 'img/branding.png' %}" id="main-logo-small">
+        </a>
       </div>
     </div>
+
     {% include "drop_down_menu.html" %}
     <div id="main_content">
       {% block content %}
