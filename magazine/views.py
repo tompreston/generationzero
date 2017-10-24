@@ -60,7 +60,7 @@ class HomePageView(CategoriesContextMixin, TemplateView):
 
 class IssueView(CategoriesContextMixin, ListView):
 
-    template_name = 'magazine/issue.html'
+    template_name = 'magazine/issue_detail.html'
     context_object_name = 'entry_list'
 
     def get_queryset(self):
