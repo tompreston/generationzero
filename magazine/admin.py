@@ -10,10 +10,16 @@ class MagazineAdminSite(admin.AdminSite):
     site_header = 'Magazine administration'
 
 
+class EntryInline(admin.StackedInline):
+
+    model = Entry
+
+
 class IssueAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'slug', 'is_visible')
     prepopulated_fields = {"slug": ("title",)}
+    inlines = [EntryInline]
 
 
 class CategoryAdmin(admin.ModelAdmin):
