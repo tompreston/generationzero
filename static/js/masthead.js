@@ -1,36 +1,38 @@
 var Masthead = {
 	show_masthead: true,
 	hidden: false,
+	hiding: false,
 };
 
 /* hide the masthead */
 Masthead.hide = function() {
-	$("#masthead").slideUp({
+	$("#masthead_container").slideUp({
 		duration: 'slow',
 		start: function(){
 			$("#branding").fadeIn();
-			/* prevent scrolling */
-			$('html, body').css({
-				overflow: 'hidden',
-				height: '100%'
-			});
+			/* prevent scrolling
+			*/
 		},
 		done: function () {
-			/* reenable scrolling */
-			$('html, body').css({
-				overflow: 'auto',
-				height: 'auto'
-			});
+			/* reenable scrolling
+			*/
+			Masthead.hidden = true;
+			$('body').removeClass('stop-scrolling');
+			console.log("DONE");
 		}
 	});
 };
 
 Masthead.scroll = function() {
 	var scrollPosition = $(window).scrollTop();
+	console.log("scrollPosition "+scrollPosition+" hidden "+Masthead.hidden);
 	if (scrollPosition > 2){
 		if (!Masthead.hidden) {
-			Masthead.hide();
-			Masthead.hidden = true;
+			window.scrollTo(0, 0);
+			$('body').addClass('stop-scrolling');
+			if (!Masthead.hiding) {
+				Masthead.hide();
+			}
 		}
 	}
 };
