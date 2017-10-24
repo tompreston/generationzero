@@ -2,6 +2,7 @@ from magazine.models import (Issue, MainCategory, Category, Entry)
 from django.views.generic import (TemplateView, ListView, DetailView)
 from django.views.generic.base import ContextMixin
 from django.shortcuts import get_object_or_404
+from django.db.models import Count
 
 
 class CategoriesContextMixin(ContextMixin):
@@ -30,9 +31,11 @@ class CategoriesContextMixin(ContextMixin):
 
     def get_popular_categories(self):
         """Return a list of the most popular categories."""
-        # TODO this must order_by number of entries, not title
-        return Category.objects.order_by(
-                'title')[:self.MAX_NUM_DEFAULT_CATEGORIES]
+        return Category.objects.annotate(
+                num_entries=Count('entry')
+            ).order_by(
+                '-num_entries'
+            )[:self.MAX_NUM_DEFAULT_CATEGORIES]
 
 
 class HomePageView(CategoriesContextMixin, TemplateView):
