@@ -86,21 +86,24 @@ div#menu-dropdown.hide,
 #header_mobile {
     display: none;
 }
+#masthead_container {
+    width: 100%;
+}
 #masthead {
-    padding: 2% 0;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 0;
     position: relative;
+    top: 0;
+    left: 0;
+    margin: 2% auto;
     z-index: 9000;
+    text-align: center;
+}
+
+#branding, #menu-burger-control {
+    /* opacity is 0 at first so it can fade in */
+    opacity: 0;
 }
 
 #branding {
-    /* display is none at first so it can fade in */
-    display: none;
     position: absolute;
     top: 18px;
     left: 15px;
