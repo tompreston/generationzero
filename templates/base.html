@@ -74,11 +74,14 @@
     </div>
 
     {% include "drop_down_menu.html" %}
-    <div id="main_content">
-      {% block content %}
-      {# here is where the actual content goes #}
-      {% endblock content %}
-      <div class="clear"></div>
+
+    <div id="main_content_container">
+      <div id="main_content">
+        {% block content %}
+        {# here is where the actual content goes #}
+        {% endblock content %}
+        <div class="clear"></div>
+      </div>
     </div>
 
     <footer class="footer">
