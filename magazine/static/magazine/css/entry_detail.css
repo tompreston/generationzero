@@ -3,7 +3,8 @@ div#menu-dropdown {
 }
 
 .entry-container {
-    max-width: 800px;
+    max-width: 600px;
+    min-height: 250px;
     margin: 0 auto;
     /* position: relative; makes this anchor for position: absolute; */
     position: relative;
