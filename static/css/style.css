@@ -166,11 +166,17 @@ p#menu-dropdown-contact-email {
     height: 25px;
 }
 
-/* MAIN CONTENT */
+/* main content
+ * The width property specifies the width of the content, not including
+ * margin/border/padding. So, since what we're actually describing here is
+ * that we want all elements to be within 100% of the page, we have to wrap
+ * it all in a container.
+ */
+#main_content_container {
+    width: 100%;
+}
 #main_content {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px 15px 0 15px;
 }
 
 .entry-content figure {
