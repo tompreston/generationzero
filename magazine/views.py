@@ -41,14 +41,18 @@ class HomePageView(CategoriesContextMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
+        context['category'] = self.get_category()
         context['entry_list'] = self.get_entry_list()
         context['issue_list'] = Issue.objects.filter(is_visible=True)
         return context
 
+    def get_category(self):
+        return self.kwargs.get('category_slug')
+
     def get_entry_list(self):
         entries = Entry.objects.filter(is_visible=True)\
                                .order_by('-created_at')
-        category = self.kwargs.get('category_slug')
+        category = self.get_category()
         if category:
             entries = entries.filter(categories__slug=category)
         return entries

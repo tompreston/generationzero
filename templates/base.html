@@ -29,11 +29,13 @@
   <body>
     {% block body %}
 
+    {% if not category %}
     <div id="masthead_container">
       <div id="masthead">
         <img src="{% static 'img/branding.png' %}">
       </div>
     </div>
+    {% endif %}
 
     <div id="header_container">
 
