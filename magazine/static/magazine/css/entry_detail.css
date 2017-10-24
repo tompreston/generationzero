@@ -18,8 +18,8 @@ div#menu-dropdown {
 .entry-info.notsmartphone {
     position: absolute;
     top: 120px;
-    left: -185px;
-    width: 185px;
+    left: -250px;
+    width: 250px;
 }
 
 .entry-info.smartphone {
