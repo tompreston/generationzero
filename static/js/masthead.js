@@ -36,9 +36,11 @@ Masthead.scroll = function() {
 
 	// after we go past the masthead, hide it and turn off this logic
 	if (scrollPosition > mastheadHeight) {
-		$("#masthead").hide();
-		window.scrollTo(0, 0);
 		$(window).off("scroll");
+		$("#masthead").hide(0, function() {
+			// scroll to the top when finished
+			window.scroll(0, $(window).scrollTop());
+		});
 	}
 };
 
