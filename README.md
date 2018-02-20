@@ -49,28 +49,12 @@ So, currently the website works like this:
 
 Getting Started
 ---------------
-This is how I work, your milage may vary.
-
-First, you'll need `pip` and `virtualenv` installed. Go get them and
-then come back.
-
-Clone the repo:
+Use pipenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 
     git clone https://github.com/tompreston/generationzero.git
     cd generationzero/
-
-Setup a virtual environment directory called `venv` and then activate it:
-
-    python3 -m venv venv
-    source venv/bin/activate
-
-Your command line should change to indicate that you're now using the
-virtual Python environment. Now install all of the required packages:
-
-    pip install -r requirements.txt
-
-This will install everything you need into the `venv` virtual environment
-directory (so it doesn't litter your system files).
+    pipenv install -r requirements.txt
+    pipenv shell
 
 Create the database:
 
@@ -92,9 +76,3 @@ Check out the website at:
 
     127.0.0.1:8000/
     127.0.0.1:8000/admin/
-
-When you're done developing, make sure you deactivate the virtual
-environment with:
-
-    deactivate
-
