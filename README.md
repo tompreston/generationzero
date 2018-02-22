@@ -2,10 +2,18 @@ Generation Zero
 ===============
 The [Generation Zero](http://www.generationzero.org.uk/) website.
 
+CSS/frontend people! Yes *YOU*! We need your help! For free! Wee!
+(Tom sucks at CSS - it needs a big tidy up)
+
+
 Todo
 ----
-- Author page w/short bio at end of entry + social links
 - Issues page
+- Fixed width of website on large displays
+- Menu burger close cross
+- Author page w/short bio at end of entry + social links
+  - We need to discuss how the bio will work.
+  - Is it the same for each entry by an author
 
 
 Django
@@ -15,16 +23,15 @@ If you're new to Django, here's the layout:
     generationzero/       <- project directory
         generationzero/   <- settings and stuff
         magazine/         <- the `magazine` app
-        static/
-            css/          <- stylesheets
+        static/           <- static files, css/js/images
         templates/        <- HTML templates for the website
             base.html     <- other templates inherit from this
             *.html        <- templates for views
         manage.py         <- project control
         requirements.txt  <- packages reqired for this project
 
-The idea is that the `magazine` app is generic so that it can be repurposed
-for other projects (`my rad magazine website` or `generation one` etc).
+In a perfect world the `magazine` app is generic so that it can be repurposed
+for other projects, such as `my rad magazine website` or `generation one` etc.
 
 
 Structure
@@ -39,36 +46,15 @@ So, currently the website works like this:
     - entry page (just on it's own atm)
     - archive TODO
 
-TODO: Can an entry be a part of many categories? So can someone write
-something that goes into `Art` and `Tech` or should we keep it to one
-category. Remember: just because you CAN do something doesn't mean that
-you SHOULD!
-
 
 Getting Started
 ---------------
-This is how I work, your milage may vary.
-
-First, you'll need `pip` and `virtualenv` installed. Go get them and
-then come back.
-
-Clone the repo:
+Use pipenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 
     git clone https://github.com/tompreston/generationzero.git
     cd generationzero/
-
-Setup a virtual environment directory called `venv` and then activate it:
-
-    virtualenv venv
-    source venv/bin/activate
-
-Your command line should change to indicate that you're now using the
-virtual Python environment. Now install all of the required packages:
-
-    pip install -r requirements.txt
-
-This will install everything you need into the `venv` virtual environment
-directory (so it doesn't litter your system files).
+    pipenv install -r requirements.txt
+    pipenv shell
 
 Create the database:
 
@@ -90,9 +76,3 @@ Check out the website at:
 
     127.0.0.1:8000/
     127.0.0.1:8000/admin/
-
-When you're done developing, make sure you deactivate the virtual
-environment with:
-
-    deactivate
-

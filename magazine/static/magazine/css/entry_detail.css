@@ -2,23 +2,37 @@ div#menu-dropdown {
     border-top: none;
 }
 
+.entry-container {
+    max-width: 600px;
+    min-height: 250px;
+    margin: 0 auto;
+    /* position: relative; makes this anchor for position: absolute; */
+    position: relative;
+}
+
 .entry-categories {
     font-style: italic;
     font-size: 0.8em;
 }
 
-.entry-info {
-    /*float: left;*/
+.entry-info.notsmartphone {
+    position: absolute;
+    top: 120px;
+    left: -250px;
+    width: 250px;
 }
+
 .entry-info.smartphone {
     display: none;
 }
 
+/*
 .entry-extra {
-    /*float: right;*/
-    /*display: block;*/
-    /*border: 1px solid red;*/
+    float: right;
+    display: block;
+    border: 1px solid red;
 }
+*/
 
 .entry-title {
     font-size: 2em;
@@ -39,9 +53,8 @@ div#menu-dropdown {
     width: 100%;
 }
 
-
-/* Smartphones */
-@media only screen and (max-width: 760px) {
+/* iPads and below */
+@media only screen and (max-width: 1024px) {
     .entry-title {
         font-size: 1.5em;
         text-align: left;

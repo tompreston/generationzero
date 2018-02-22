@@ -6,9 +6,21 @@ from django.utils import timezone
 
 
 class Issue(models.Model):
-    """An issue is a collection of blog entries."""
+    """An issue is a themed collection of blog entries with accompanying text"""
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
+    number = models.IntegerField()
+    introduction = models.TextField()
+    # TODO make this generic?
+    well_image = models.CharField(
+        max_length=200,
+        blank=True,
+        help_text="Image to fill this issue's well (higher "+
+                  "priority than 'well text').")
+    well_text = models.TextField(
+        blank=True,
+        help_text="Text to fill this issue's well (if blank, 'issue "+
+                  "content' will be used).")
     created_at = models.DateTimeField(default=timezone.now)
     modified_at = models.DateTimeField(auto_now=True)
     is_visible = models.BooleanField(default=True)
@@ -33,9 +45,13 @@ class Category(models.Model):
 
 
 class MainCategory(models.Model):
-    """A main-category is one which the user can browse in the top menu."""
+    """A main-category is one which the user can browse in the top menu. If
+    there are none specified, then the categories are ordered by number of
+    entries.
+    """
     category = models.OneToOneField(Category,
-        help_text="This category will appear in the header-menu")
+        help_text="This category will appear in the header-menu. If there are "
+        "no main-categories then the most popular ones will be displayed.")
 
     def __str__(self):
         return self.category.title
@@ -55,7 +71,7 @@ class Entry(models.Model):
         blank=True,
         help_text="Text to fill this entry's well (if blank, 'entry "+
                   "content' will be used).")
-    issue = models.ForeignKey(Issue, blank=True, null=True)
+    issue = models.ForeignKey(Issue, blank=True, null=True, default=None)
     categories = models.ManyToManyField(Category)
     created_by = models.ForeignKey(User)
     created_at = models.DateTimeField(default=timezone.now)

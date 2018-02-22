@@ -37,12 +37,9 @@ html body * {
     font-family: "FuturaStd-BookOblique";
 }
 
-.entry-well-content {
-    font-family: Clearface-Bold;
-}
-
-body {
-    margin: 0;
+.issue-well .issue-well-content .issue-well-content-text,
+.entry-well .entry-well-content .entry-well-content-text {
+    font-family: "Clearface-Bold";
 }
 
 a {
@@ -65,11 +62,11 @@ div#menu-dropdown.hide,
 
 /* MAIN HEADER w/ NAVIGATION ETC. */
 #header_container {
+    /* center all inline content */
     position: relative;
     top: 0;
     left: 0;
     right: 0;
-    /* center all inline content */
     text-align: center;
     text-transform: uppercase;
     border-bottom: 5px solid rgb(0, 0, 0);
@@ -84,34 +81,34 @@ div#menu-dropdown.hide,
   color: #000;
 }
 #header {
-    margin: 30px 20px;
+    padding: 25px 0;
 }
-#header div {
-    vertical-align: middle;
+#header_mobile {
+    display: none;
+}
+#masthead_container {
+    width: 100%;
 }
 #masthead {
-    padding: 2% 0;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 0;
     position: relative;
+    top: 0;
+    left: 0;
+    margin: 2% auto;
     z-index: 9000;
+    text-align: center;
+}
+
+#branding, #menu-burger-control {
+    /* opacity is 0 at first so it can fade in */
+    opacity: 0;
 }
 
 #branding {
-    /* display is none at first so it can fade in */
-    display: none;
-    float: left;
-    position: relative;
-    width: 0;
-    height: 0;
+    position: absolute;
+    top: 18px;
+    left: 15px;
 }
 #branding #main-logo-small {
-    position: absolute;
-    top: -13px;
     height: 52px;
 }
 
@@ -119,21 +116,22 @@ div#menu-dropdown.hide,
     margin: 0;
     padding: 0;
 }
-#navigation li{
+#navigation li {
     display: inline-block;
-    margin: 0 20px;
+    margin: 7px 10px 0 10px;
 }
-#navigation a{
+#navigation a {
     font-size: 26px;
 }
 
 /* menu dropdown */
 #menu-burger-control {
-    float: right;
-    position: relative;
-    top: -37px;
-    width: 8%;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    width: 30px;
     font-size: 27px;
+    padding-top: 3px;
 }
 
 #menu-dropdown {
@@ -167,16 +165,21 @@ p#menu-dropdown-contact-email {
     padding-right: 5px;
 }
 
-#twitter-link,
-#instagram-link {
+.sociallink img {
     height: 25px;
 }
 
-/* MAIN CONTENT */
+/* main content
+ * The width property specifies the width of the content, not including
+ * margin/border/padding. So, since what we're actually describing here is
+ * that we want all elements to be within 100% of the page, we have to wrap
+ * it all in a container.
+ */
+#main_content_container {
+    width: 100%;
+}
 #main_content {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px 15px 0 15px;
 }
 
 .entry-content figure {
@@ -203,30 +206,23 @@ p#menu-dropdown-contact-email {
     .clear{
         clear: both;
     }
-    #header_container {
-        /* replace the bottom margin with a black border */
-        margin-bottom: 0px;
-        border-bottom: 5px solid rgb(0, 0, 0);
-    }
     #masthead,
-    #navigation,
-    #menu-burger-control {
+    #header_container {
         display: none;
     }
-    #header {
-        margin: 20px 0;
-    }
-    #branding {
-        width: 100%;
-        height: 52px;
-    }
-    #branding #main-logo-small {
+    #header_mobile {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        position: static;
+        position: relative;
+        width: 100%;
+        height: 65px;
+        border-bottom: 5px solid rgb(0, 0, 0);
+    }
+    #header_mobile #branding_mobile {
+        width: 80px;
+        margin: 12px auto 0 auto;
+    }
+    #header_mobile #branding_mobile img {
         height: 52px;
-        width: 82px;
     }
     #main_content {
         width: 95%;

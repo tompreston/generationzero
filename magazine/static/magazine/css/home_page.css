@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Default size */
 .grid-sizer,
 .grid-item {
   width: 48%;
@@ -9,6 +10,17 @@
 
 .gutter-sizer {
     width: 4%;
+}
+
+/* Large screens */
+@media only screen and (min-width: 1599px) {
+  .grid-sizer,
+  .grid-item {
+    width: 32%;
+  }
+  .gutter-sizer {
+      width: 2%;
+  }
 }
 
 /* Smartphones */

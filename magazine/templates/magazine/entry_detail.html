@@ -7,13 +7,6 @@
 
 {% block css %}
 {{ block.super }}
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-<!--[if lte IE 8]>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
-<!--<![endif]-->
 <link rel="stylesheet" type="text/css" href="{% static 'magazine/css/entry_detail.css' %}">
 {% endblock css %}
 
@@ -21,67 +14,58 @@
 {% block content %}
 <div class="entry-container">
 
-    <div class="pure-g">
-        <div class="pure-u-md-5-24">
-        </div>
-        <div class="pure-u-1 pure-u-md-14-24">
-            <div class="entry-title">
-                {{ entry.title }}
-            </div>
-            <div class="entry-info smartphone">
-                <div class="entry-date">
-                    {{ entry.created_at|date:'d.m.y' }}
-                </div>
-                <div class="entry-author">
-                    Author &dash; {{ entry.created_by.get_full_name }}
-                    <!-- TODO add extra authors -->
-                </div>
-                <div class="entry-categories">
-                    {{ entry.categories_display }}
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="entry-title">
+      {{ entry.title }}
+  </div>
 
-    <div class="pure-g">
+  <!-- inline entry-into, only for smartphones -->
+  <div class="entry-info smartphone">
+      <div class="entry-date">
+          {{ entry.created_at|date:'d.m.y' }}
+      </div>
+      <div class="entry-author">
+          Author &dash; {{ entry.created_by.get_full_name }}
+          <!-- TODO add extra authors -->
+      </div>
+      <div class="entry-categories">
+          {{ entry.categories_display }}
+      </div>
+  </div>
 
-        <div class="pure-u-md-5-24">
-            <div class="entry-info notsmartphone">
-                <div class="entry-date">
-                    {{ entry.created_at|date:'d.m.y' }}
-                </div>
-                <div class="entry-author">
-                    Author &dash; {{ entry.created_by.get_full_name }}
-                    <!-- TODO add extra authors -->
-                </div>
-                <div class="entry-categories">
-                    {{ entry.categories_display }}
-                </div>
-            </div>
-        </div>
+  <!-- floating entry-into, not for smartphones -->
+  <div class="entry-info notsmartphone">
+      <div class="entry-date">
+          {{ entry.created_at|date:'d.m.y' }}
+      </div>
+      <div class="entry-author">
+          Author &dash; {{ entry.created_by.get_full_name }}
+          <!-- TODO add extra authors -->
+      </div>
+      <div class="entry-categories">
+          {{ entry.categories_display }}
+      </div>
+  </div>
 
-        <div class="pure-u-1 pure-u-md-14-24">
-            <div class="entry-content">
-                {{ entry.content|markdown }}
-            </div>
-        </div>
+  <div class="entry-content">
+      {{ entry.content|markdown }}
+  </div>
 
 {% comment %}
-        <div class="pure-u-5-24">
-            <div class="entry-extra">
-                <div class="entry-social">
-                    Share on Facebook
-                </div>
-                <div class="entry-related">
-                    <ul>
-                        <li>related content</li>
-                        <li>related content</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<div class="pure-u-5-24">
+  <div class="entry-extra">
+    <div class="entry-social">
+      Share on Facebook
+    </div>
+    <div class="entry-related">
+      <ul>
+        <li>related content</li>
+        <li>related content</li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endcomment %}
 
-    </div>
 </div>
 {% endblock content %}
+

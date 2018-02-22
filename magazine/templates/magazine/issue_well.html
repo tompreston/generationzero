@@ -1,0 +1,24 @@
+<div class="issue-well">
+    <a href="{% url 'issue' issue.slug %}" class="issue-link"><span></span></a>
+    <div class="issue-well-header">
+        <div class="issue-well-number">
+            {{ issue.number }}&period;
+        </div>
+        <div class="issue-well-title">
+            {{ issue.title }}
+        </div>
+    </div>
+    <div class="issue-well-content">
+    {% if issue.well_image %}
+        <img src="{{ issue.well_image }}" alt="Image for {{ issue.title }}">
+    {% else %}
+        <div class="issue-well-content-text">
+        {% if issue.well_text %}
+                {{ issue.well_text }}
+        {% else %}
+            {{ issue.content|striptags|truncatechars:200 }}
+        {% endif %}
+        </div>
+    {% endif %}
+    </div>
+</div>

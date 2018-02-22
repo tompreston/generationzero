@@ -26,7 +26,10 @@ SECRET_KEY = '4&-4w!$ii$!_8k05o2v^o9pv=b&n_!mc9t1v*&ybfph45=tra@'
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-
+INTERNAL_IPS = (
+    '0.0.0.0',
+    '127.0.0.1',
+)
 
 # Application definition
 
