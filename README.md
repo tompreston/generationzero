@@ -56,6 +56,10 @@ Use pipenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
     pipenv install -r requirements.txt
     pipenv shell
 
+Run tests:
+
+    python manage.py test
+
 Create the database:
 
     python manage.py migrate
