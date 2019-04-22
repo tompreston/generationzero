@@ -1,6 +1,14 @@
 wheel
-Django==1.11
-django-markdown-app==0.9.3.1
-Markdown==2.6.5
-psycopg2==2.7
 
+# Django LTS
+Django==1.11.20
+
+# From https://pypi.org/project/django-markdown-app/0.9.6/
+# Django 2.0 or later 0.9.6
+# Django 1.8 or later 0.9.3.1
+django-markdown-app==0.9.3.1
+
+Markdown==3.1
+
+# Requires postgresql libs `brew install postgresql`
+psycopg2==2.8.2
