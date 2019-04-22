@@ -1,0 +1,53 @@
+image: fedora
+
+stages:
+  - test
+  - deploy
+
+# https://docs.gitlab.com/ee/ssh/
+# https://docs.gitlab.com/ee/ci/ssh_keys/
+# https://gitlab.com/gitlab-examples/ssh-private-key/blob/master/.gitlab-ci.yml
+before_script:
+  - dnf update -y && dnf install -y openssh-clients rsync
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+test:
+  # Don't bother running before_script in test stage. We really want per-stage
+  # before_scripts: https://gitlab.com/gitlab-org/gitlab-ce/issues/15403
+  before_script:
+    - ''
+  stage: test
+  script:
+    - pip3 install --user -r requirements.txt
+    - python3 manage.py test
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploying to staging"
+    - ssh $CI_DEPLOY_TARGET -- "cd staging/generationzero; scripts/deploy.sh"
+  environment:
+    name: staging
+    url: http://staging.generationzero.org.uk/
+# debug, change to only: master
+  only:
+    - branches
+  except:
+    - master
+
+production:
+  stage: deploy
+  script:
+    - echo "Deploying to production"
+    - ssh $CI_DEPLOY_TARGET -- "echo I am production"
+  environment:
+    name: production
+    url: http://generationzero.org.uk/
+  when: manual
+  only:
+  - master
