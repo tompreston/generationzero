@@ -8,7 +8,8 @@ CSS/frontend people! Yes *YOU*! We need your help! For free! Wee!
 
 Todo
 ----
-- Issues page
+- Use container pods (not docker compose, as this is non-standard)
+- Issues page (maybe see an example of this before counting it as done)
 - Fixed width of website on large displays
 - Menu burger close cross
 - Author page w/short bio at end of entry + social links
