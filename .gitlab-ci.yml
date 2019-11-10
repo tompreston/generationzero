@@ -33,6 +33,8 @@ deploy_staging:
     - ssh $CI_DEPLOY_TARGET -- "cd staging/generationzero; scripts/deploy.sh"
   environment:
     name: staging
+    # staging.generationzero.org.uk must be in /etc/hosts somewhere (or buy the
+    # domain)
     url: http://staging.generationzero.org.uk/
 # debug, change to only: master
   only:
